@@ -4,13 +4,15 @@ from itertools import compress
 # Import the Classifier
 from Logistic import LogisticClassifier
 from LDA import LDAClassifier
+from DecisionTree import DecisionTree
 
 # Path to the data set
-DATA_SET = "./Data/winequality-red.csv"
+# DATA_SET = "./Data/winequality-red.csv"
 # DATA_SET = "./Data/watermelon3.txt"
+DATA_SET = "./Data/watermelon2.txt"
 FOLD_NUM = 10
 ITERATIONS = 50
-CLASSIFIER = LDAClassifier
+CLASSIFIER = DecisionTree
 
 
 def load_csv(file_name, shuffle=True):
