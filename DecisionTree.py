@@ -39,9 +39,10 @@ class DecisionTree:
         assert(data.shape[1] == self._dims)
         assert(labels.shape[0] == data.shape[0])
 
-    def __init__(self, dims):
+    def __init__(self, parameter_dict):
         self._tree = None
-        self._dims = dims
+        self._dims = parameter_dict['Dimension']
+        self._dim_discrete = np.ones((self._dims, 1))
 
     def fit(self, data, labels, iterations):
         self._data_label_pair_validity_check(data, labels)

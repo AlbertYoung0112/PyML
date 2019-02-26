@@ -2,8 +2,8 @@ import numpy as np
 
 
 class LDAClassifier:
-    def __init__(self, dims):
-        self._dims = dims
+    def __init__(self, parameter_dict):
+        self._dims = parameter_dict["Dimension"]
         self._weight = np.random.randn(self._dims, 1)
         self._positive_value = None
         self._negative_value = None

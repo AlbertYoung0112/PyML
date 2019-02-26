@@ -2,7 +2,8 @@ import numpy as np
 
 
 class LogisticClassifier:
-    def __init__(self, dim):
+    def __init__(self, parameter_dict):
+        dim = parameter_dict["Dimension"]
         assert(dim > 0)
         self._dim = dim
         self._weight = np.random.randn(dim, 1)

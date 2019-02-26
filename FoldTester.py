@@ -13,6 +13,9 @@ DATA_SET = "./Data/watermelon2.txt"
 FOLD_NUM = 10
 ITERATIONS = 50
 CLASSIFIER = DecisionTree
+CLASSIFIER_PARAMETERS = {
+    "Discrete": False
+}
 
 
 def load_csv(file_name, shuffle=True):
@@ -59,7 +62,8 @@ total_precision_test = []
 
 # Use "one vs the rest" strategy for multi-classification
 # classifier_dict = {l: LogisticClassifier(dims) for l in data_set_dict.keys()}
-classifier_dict = {l: CLASSIFIER(dims) for l in data_set_dict.keys()}
+CLASSIFIER_PARAMETERS['Dimension'] = dims
+classifier_dict = {l: CLASSIFIER(CLASSIFIER_PARAMETERS) for l in data_set_dict.keys()}
 
 for fold_cnt in range(FOLD_NUM):
     # Generate the train data/label and the test data/label
